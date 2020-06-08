@@ -48,11 +48,7 @@ export default new Vuex.Store({
     },
     //删除已完成的todo
     deleteAllCom(state){
-      for(var i=0;i<state.todos.length;i++){
-        if(state.todos[i].completed){
-          state.todos.splice(i,1)
-        }
-      }
+      state.todos=state.todos.filter(todo=>!todo.completed)
     },
     // uS(state,s){
     //   state.s=s
